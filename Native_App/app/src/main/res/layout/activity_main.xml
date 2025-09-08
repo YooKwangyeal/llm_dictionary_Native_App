@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1A1A1A">
+
+    <!-- Top Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="16dp"
+        android:background="#121212">
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="오픈누리 사전"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#E0E0E0" />
+    </LinearLayout>
+
+    <!-- Language Selectors -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="16dp"
+        android:background="#1A1A1A">
+        
+        <Button
+            android:id="@+id/englishBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="English"
+            android:textColor="#E0E0E0"
+            android:background="@drawable/lang_button_active"
+            android:layout_marginEnd="4dp"
+            style="@style/Widget.AppCompat.Button.Borderless" />
+            
+        <TextView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:text="⇄"
+            android:textSize="24sp"
+            android:textColor="#9E9E9E"
+            android:gravity="center"
+            android:background="@drawable/swap_button" />
+            
+        <Button
+            android:id="@+id/koreanBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Korean"
+            android:textColor="#E0E0E0"
+            android:background="@drawable/lang_button_normal"
+            android:layout_marginStart="4dp"
+            style="@style/Widget.AppCompat.Button.Borderless" />
+    </LinearLayout>
+
+    <!-- Input Area -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="#1A1A1A">
+        
+        <EditText
+            android:id="@+id/searchInput"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:hint="사전 데이터를 먼저 로드해주세요."
+            android:padding="12dp"
+            android:background="@android:color/transparent"
+            android:textSize="24sp"
+            android:textColor="#E0E0E0"
+            android:textColorHint="#9E9E9E"
+            android:gravity="top|start"
+            android:inputType="textMultiLine" />
+    </LinearLayout>
+
+    <!-- Filters and Statistics -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="#1A1A1A">
+        
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginBottom="8dp">
+            <Spinner
+                android:id="@+id/posFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp" />
+            <Spinner
+                android:id="@+id/lengthFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp" />
+            <Spinner
+                android:id="@+id/rarityFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginBottom="8dp">
+            <TextView
+                android:id="@+id/totalWords"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="총 단어 수: 0"
+                android:textSize="16sp"
+                android:textColor="#E0E0E0"
+                android:layout_marginEnd="16dp" />
+            <TextView
+                android:id="@+id/searchResults"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="검색 결과: 0"
+                android:textSize="16sp"
+                android:textColor="#E0E0E0"
+                android:layout_marginEnd="16dp" />
+            <TextView
+                android:id="@+id/avgScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="평균 점수: 0.00"
+                android:textSize="16sp"
+                android:textColor="#E0E0E0" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/loadingSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_gravity="center" />
+
+    <!-- Results Container -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/resultsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#1A1A1A"
+        android:padding="16dp" />
+
+</LinearLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/card_background"
+    android:padding="20dp"
+    android:layout_marginBottom="12dp"
+    android:elevation="5dp"
+    android:layout_margin="16dp">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+        <TextView
+            android:id="@+id/wordTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#BBDEFB" />
+        <TextView
+            android:id="@+id/posTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#BBDEFB"
+            android:padding="6dp"
+            android:layout_marginStart="12dp"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+        <TextView android:id="@+id/scoreBadge" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="#d4edda" android:textColor="#155724" android:padding="4dp" android:layout_marginEnd="8dp" />
+        <TextView android:id="@+id/lengthBadge" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="#f0f2f5" android:textColor="#666" android:padding="4dp" android:layout_marginEnd="8dp" />
+        <TextView android:id="@+id/rarityBadge" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="#fff3cd" android:textColor="#856404" android:padding="4dp" android:layout_marginEnd="8dp" />
+        <TextView android:id="@+id/confidenceBadge" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="#e3f2fd" android:textColor="#1976d2" android:padding="4dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/definition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:textColor="#E0E0E0"
+        android:layout_marginTop="12dp"
+        android:lineSpacingMultiplier="1.6" />
+
+    <TextView
+        android:id="@+id/example"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textColor="#B0B0B0"
+        android:background="@drawable/example_background"
+        android:padding="10dp"
+        android:layout_marginTop="8dp"
+        android:textStyle="italic" />
+</LinearLayout>
